@@ -74,10 +74,11 @@ CMSPAR = 0  # default, for unsupported platforms, override below
 # for the platform
 plat = sys.platform.lower()
 
+# linux系统
 if plat[:5] == 'linux':    # Linux (confirmed)  # noqa
     import array
 
-    # extra termios flags
+    # extra termios flags 31位置为1，开启奇偶校验
     CMSPAR = 0o10000000000  # Use "stick" (mark/space) parity
 
     # baudrate ioctls
